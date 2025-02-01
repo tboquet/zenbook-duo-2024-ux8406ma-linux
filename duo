@@ -4,7 +4,7 @@ cd "$(dirname "$(realpath "$0")")"
 
 # 3K model settings
 prefered_resolution="2880x1800"
-refresh_rate="120.00"
+refresh_rate="119.96"
 ui_scale=1.7475727796554565 # 1.75
 y_offset=1030
 backlight=card1-eDP-2-backlight
