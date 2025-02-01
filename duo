@@ -50,22 +50,22 @@ case "$1" in
     fi
     ;;
   top)
-    xrandr --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --pos 0x0
+    xrandr --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --pos 0x0
     ;;
   both)
-    xrandr --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --pos 0x0 \
-           --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --pos 0x$y_offset --below eDP-1
+    xrandr --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --scale --pos 0x0 \
+           --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale --pos 0x$y_offset --below eDP-1
     ;;
   bottom)
-    xrandr --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --pos 0x0
+    xrandr --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale --pos 0x0
     ;;
   left-up)
-    xrandr --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --rotate left --pos 0x0 \
-           --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --rotate left --pos ${y_offset}x0
+    xrandr --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale --rotate left --pos 0x0 \
+           --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --scale --rotate left --pos ${y_offset}x0
     ;;
   right-up)
-    xrandr --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --rotate right --pos 0x0 \
-           --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale ${ui_scale}x${ui_scale} --rotate right --pos ${y_offset}x0
+    xrandr --output eDP-1 --mode $prefered_resolution --rate $refresh_rate --scale --rotate right --pos 0x0 \
+           --output eDP-2 --mode $prefered_resolution --rate $refresh_rate --scale --rotate right --pos ${y_offset}x0
     ;;
   status-internal)
     internal_monitors="$(xrandr --query | grep -E " connected " | grep -E "eDP-[12]")"
